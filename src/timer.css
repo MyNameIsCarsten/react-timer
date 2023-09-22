@@ -1,0 +1,10 @@
+span {
+    font-family: 'clockicons';
+    margin-left: 6px;
+}
+
+.timer-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
