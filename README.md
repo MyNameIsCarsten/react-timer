@@ -85,11 +85,6 @@ Before you can use the Timer App, make sure you have the following software/tool
 ### Timer expired
 ![Timer expired](timer-expired.jpg)
 
-## Contributing
-
-We welcome contributions from the community to improve the Timer App. If you find any bugs, have suggestions for new features, or want to contribute in any way, please follow our [contributing guidelines](CONTRIBUTING.md).
-
-
 ## Acknowledgements
 
 - The Timer App was inspired by the need for a simple yet effective timer tool for everyday tasks.
