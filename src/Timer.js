@@ -69,7 +69,9 @@ const Timer = (props) => {
   
     // Update the timer's properties
     updateTimerArray((prevTimers) =>
+        // Go through each timer
         prevTimers.map((prevTimer) =>
+          // for the timer if the same id we update timeStamp
           prevTimer.id === timer.id ? { ...prevTimer, timerStamp: newTimerStamp } : prevTimer
         )
       );
@@ -79,7 +81,6 @@ const Timer = (props) => {
     // Reset the timer state to 'active'
     setTimerState('active');
   };
-  
   
 
   // workaround to update the classes of li and button items with boostrap styles depending on timerState
@@ -92,18 +93,24 @@ const Timer = (props) => {
       <strong>{timer.timerName}: </strong><span>{formatTime(remainingTime)}</span>
       
       <button
+        className={classNamesBtnRemove}
+        onClick={handleRemoveClick}
+      >
+        &times;
+      </button>
+
+      {timerState === 'expired' ? <span>{formatTime(timer.timerLen)}</span> : ''}
+
+      <button
         className='btn rounded-pill px-3 btn-warning'
         onClick={handleResetClick}
       >
         &#8634;
       </button>
       
-      <button
-        className={classNamesBtnRemove}
-        onClick={handleRemoveClick}
-      >
-        &times;
-      </button>
+      
+
+      
       
     </li>
   );
