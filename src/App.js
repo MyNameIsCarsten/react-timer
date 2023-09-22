@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import AddTimmerForm from './AddTimerForm';
+import Clock from './Clock';
+import Timer from './Timer';
+
+
 
 function App() {
+  const[timerArray, setTimerArray] = useState([]);
+
+  const addTimer = (timer) => {
+    setTimerArray((prevTimer) => [...prevTimer, timer]);
+  };
+
+  const removeTimer = (timerIdToRemove) => {
+    setTimerArray((prevTimmer) => prevTimmer.filter(t => t.id !== timerIdToRemove)
+    );
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px">
+      <Clock />
+      <AddTimmerForm addTimer={addTimer}/>
+      <ul className='list-group'>{timerArray.map((t)=> 
+        <Timer timer={t} removeTimer={removeTimer}/>)}
+      </ul>
     </div>
   );
 }
