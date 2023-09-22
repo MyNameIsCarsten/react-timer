@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './timer.css'
 
 const Timer = (props) => {
   const { timer, removeTimer } = props;
@@ -39,12 +40,12 @@ const Timer = (props) => {
     removeTimer(timer.id);
   };
 
-  const classNamesLi = `list-group-item ${timerState === 'expired' ? 'bg-danger' : ''}`;
+  const classNamesLi = `timer-list list-group-item ${timerState === 'expired' ? 'bg-danger' : ''}`;
   const classNamesBtn = `remove-button btn rounded-pill px-3 ${timerState === 'expired' ? 'btn-light' : 'btn-danger'}`
 
   return (
     <li className={classNamesLi} key={timer.id} style={timerState === 'expired' ? { color: 'white' } : {}}>
-      {timer.timerName} - {formatTime(remainingTime)}
+      <strong>{timer.timerName}: </strong><span>{formatTime(remainingTime)}</span>
       <button
         className={classNamesBtn}
         onClick={handleRemoveClick}
