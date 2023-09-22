@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './timer.css'
 
 const Timer = (props) => {
-  const { timer, removeTimer } = props;
+  const { timer, removeTimer, updateTimerArray  } = props;
   const [remainingTime, setRemainingTime] = useState(calculateRemainingTime(timer));
   const [timerState, setTimerState] = useState('active');
 
@@ -60,19 +60,51 @@ const Timer = (props) => {
     setTimerState('active');
   };
 
+  const handleResetClick = () => {
+    // Calculate the new timerStamp based on the current time and the initial timer length
+    const currentTime = Date.now();
+
+    // define new value for the time stamp of the timer (when it will expire)
+    const newTimerStamp = currentTime + timer.timerLen;
+  
+    // Update the timer's properties
+    updateTimerArray((prevTimers) =>
+        prevTimers.map((prevTimer) =>
+          prevTimer.id === timer.id ? { ...prevTimer, timerStamp: newTimerStamp } : prevTimer
+        )
+      );
+  
+    // Reset the remaining time
+    setRemainingTime(timer.timerLen);
+    // Reset the timer state to 'active'
+    setTimerState('active');
+  };
+  
+  
+
   // workaround to update the classes of li and button items with boostrap styles depending on timerState
   const classNamesLi = `timer-list list-group-item ${timerState === 'expired' ? 'bg-danger' : ''}`;
-  const classNamesBtn = `remove-button btn rounded-pill px-3 ${timerState === 'expired' ? 'btn-light' : 'btn-danger'}`
+  const classNamesBtnRemove = `remove-button btn rounded-pill px-3 ${timerState === 'expired' ? 'btn-light' : 'btn-danger'}`
+
 
   return (
     <li className={classNamesLi} key={timer.id} style={timerState === 'expired' ? { color: 'white' } : {}}>
       <strong>{timer.timerName}: </strong><span>{formatTime(remainingTime)}</span>
+      
       <button
-        className={classNamesBtn}
+        className='btn rounded-pill px-3 btn-warning'
+        onClick={handleResetClick}
+      >
+        &#8634;
+      </button>
+      
+      <button
+        className={classNamesBtnRemove}
         onClick={handleRemoveClick}
       >
         &times;
       </button>
+      
     </li>
   );
 }

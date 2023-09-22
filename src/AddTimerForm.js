@@ -100,7 +100,7 @@ const AddTimmerForm = (props) => {
           );
         })}
       </select>
-      <input type="submit" value="Add Timer" className='btn btn-success rounded-pill px-3 m-2'/>
+      <input type="submit" value="Start Timer" className='btn btn-success rounded-pill px-3 m-2'/>
     </form>
   )
 }

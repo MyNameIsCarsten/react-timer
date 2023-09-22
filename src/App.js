@@ -27,7 +27,7 @@ function App() {
       <Clock />
       <AddTimmerForm addTimer={addTimer}/>
       <ul className='list-group'>{timerArray.map((t)=> 
-        <Timer timer={t} removeTimer={removeTimer}/>)}
+        <Timer timer={t} removeTimer={removeTimer} updateTimerArray={setTimerArray} key={t.id}/>)}
       </ul>
     </div>
   );
