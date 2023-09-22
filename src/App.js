@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import AddTimmerForm from './AddTimerForm';
 import Clock from './Clock';
 import Timer from './Timer';
@@ -7,12 +7,15 @@ import Timer from './Timer';
 
 
 function App() {
+  // state for storing timers
   const[timerArray, setTimerArray] = useState([]);
 
+  // function to add a timer to timerArray state
   const addTimer = (timer) => {
     setTimerArray((prevTimer) => [...prevTimer, timer]);
   };
 
+  // function to remove a timer from timerArray state
   const removeTimer = (timerIdToRemove) => {
     setTimerArray((prevTimmer) => prevTimmer.filter(t => t.id !== timerIdToRemove)
     );

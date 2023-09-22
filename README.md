@@ -80,10 +80,10 @@ Before you can use the Timer App, make sure you have the following software/tool
 ## Screenshots
 
 ### New timer added
-![Timer-New](timer-new.jpg)
+![Timer New](timer-new.jpg)
 
 ### Timer expired
-![Timer expired](timer-expired.jpg)
+![Timer Expired](timer-expired.jpg)
 
 ## Acknowledgements
 
