@@ -99,19 +99,18 @@ const Timer = (props) => {
         &times;
       </button>
 
-      {timerState === 'expired' ? <span>{formatTime(timer.timerLen)}</span> : ''}
+      {timerState === 'expired' && timer.timerType === 'timer' ? <span>{formatTime(timer.timerLen)}</span> : ''}
+      {timer.timerType === 'timer' ? 
+        <button
+          className='btn rounded-pill px-3 btn-warning'
+          onClick={handleResetClick}
+        >
+          &#8634;
+        </button> 
+          : 
+        ''}
+      {timer.timerType === 'alarm' && timerState === 'expired' ? 'Ended: ' + timer.timerHou +':' + timer.timerMin +':' + timer.timerSec : ''}
 
-      <button
-        className='btn rounded-pill px-3 btn-warning'
-        onClick={handleResetClick}
-      >
-        &#8634;
-      </button>
-      
-      
-
-      
-      
     </li>
   );
 }

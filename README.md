@@ -1,8 +1,14 @@
 # Timer App
 
-![Timer Basic](timer-basic.jpg)
+A simple timing application built with React and Bootstrap that allows users to set a **countdown timer** or **alarm** and monitor the remaining time.
 
-A simple timer application built with React and Bootstrap that allows users to set a countdown timer and monitor the remaining time.
+## Timer
+![Timer Basic Timer](timer-basic-timer.jpg)
+
+## Alarm
+![Timer Basic Alarm](timer-basic-alarm.jpg)
+
+
 
 ## Table of Contents
 
@@ -64,16 +70,19 @@ Before you can use the Timer App, make sure you have the following software/tool
 
 3. Set the timer duration by entering the number of hours, minutes, and seconds in their respective input fields.
 
-4. Click the "Start" button to begin the countdown.
+4. Click the "Start Timer" / "Start Alarm" button to begin the countdown.
 
-5. The remaining time will be displayed in the "Time Left" section.
+5. The remaining time will be displayed.
 
-6. To reset the timer, click the "Reset" button.
+6. To reset a timer, click the "Reset" button.
+
+7. To delete a timer or alarm, click the "Delete" button
 
 ## Features
 
 - Set a timer for a specific duration (hours, minutes, seconds).
 - Start, pause, and reset the timer.
+- Set an alarm for a specific time (hours, minutes, seconds).
 - Monitor the remaining time in a user-friendly format (HH:MM:SS).
 - Intuitive user interface for easy navigation.
 
