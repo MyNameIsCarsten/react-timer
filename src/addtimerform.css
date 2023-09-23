@@ -1,0 +1,17 @@
+.alarm-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.add-border {
+    border-bottom: solid 2px #dee2e6;;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav{
+    margin-bottom: -1px;
+}
