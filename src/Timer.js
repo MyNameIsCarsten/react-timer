@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './timer.css'
+import timerSound from './timer.mp3';
 
 const Timer = (props) => {
   const { timer, removeTimer, updateTimerArray  } = props;
@@ -22,6 +23,8 @@ const Timer = (props) => {
         setTimerState('expired');
         // removeTimer(timer.id);
         // alert(`${timer.timerName} has expired!`)
+        playSound();
+
       }
     // the function above is executed each second (1000 milliseconds)
     }, 1000);
@@ -33,6 +36,15 @@ const Timer = (props) => {
 
   // useEffect is dependent on the timer state
   }, [timer]);
+
+  // function to play timer sound
+  function playSound () {
+    // Create an audio element
+    const audio = new Audio(timerSound);
+
+    // Play the audio
+    audio.play();
+  }
 
   // function to calculate remaining time based on difference to current time
   function calculateRemainingTime(timer) {

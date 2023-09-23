@@ -98,4 +98,5 @@ Before you can use the Timer App, make sure you have the following software/tool
 
 - The Timer App was inspired by the need for a simple yet effective timer tool for everyday tasks.
 - I would like to thank the React community for providing a powerful framework for building web applications.
+- For this project, I downloaded the “[ding-dong sound effect](https://www.freesoundslibrary.com/ding-ding-sound-effect/)” from Free Sounds Library.
 
